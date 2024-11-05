@@ -6,7 +6,7 @@ const config = {
     trailingSlash: false,
   },
   header: {
-    logo: 'https://shahnawaz-pabon.github.io/assets/homepage/brand.svg',
+    logo: '/assets/logo.svg',
     logoLink: 'https://shahnawaz-pabon.github.io/',
     title:
       "<a href='https://shahnawaz-pabon.github.io/'><img class='img-responsive' src='https://shahnawaz-pabon.github.io/assets/homepage/learn-logo.svg' alt='Site logo' /></a>",
