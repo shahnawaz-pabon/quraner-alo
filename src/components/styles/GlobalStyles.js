@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-export const baseStyles = css`
+export const baseStyles = (theme) => css`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
   * {
@@ -257,7 +257,7 @@ export const baseStyles = css`
     padding: 0 !important;
   }
   .navBarDefault {
-    background-color: #001934;
+    background-color: ${theme.colors.navBarBackground} ;
     border-radius: 0;
     border-top: 0;
     margin-bottom: 0;
@@ -610,7 +610,7 @@ export const baseStyles = css`
 
   /* Image styling */
   img {
-    max-width: 100%;
+    max-width: 5%;
   }
   /* end image */
   .githubBtn {

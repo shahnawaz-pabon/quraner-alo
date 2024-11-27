@@ -1,38 +1,126 @@
+/* src/styles/global.css */
+
+/* Base Styling */
+/* * {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #1488cc;
+  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+  background: linear-gradient(to right, #2b32b2, #1488cc);
+} */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap");
+
+.arabic-text {
+  font-family: "Noto Sans Arabic", sans-serif;
+  /* direction: rtl; */
+  /* Right to Left text direction */
+  /* text-align: right; */
+  /* Align Arabic text to the right */
+}
+
+/* Surah List Container */
 .surah-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows wrapping to new rows */
+  gap: 24px;
+  /* Space between cards */
+  padding: 24px;
+  justify-content: space-between;
+  /* Distribute the cards evenly */
+}
+
+/* Individual Card Styling */
+.surah-list-item {
+  position: relative;
+  background: #fff;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  padding: 60px 16px 16px 16px;
+  /* Extra space at top to accommodate the circle */
+  text-align: center;
+  box-sizing: border-box;
+  width: calc(25% - 24px);
+  /* Four cards per row */
+  min-width: 250px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 768px) {
+  .surah-list-item {
+    width: calc(50% - 16px);
+    /* Two cards per row */
   }
-  
-  .surah-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .surah-list-item {
+    width: 100%;
+    /* One card per row */
   }
-  
-  .surah-card h3 {
-    margin: 0;
-    color: #2c3e50;
-  }
-  
-  .surah-card p {
-    margin: 4px 0;
-    color: #34495e;
-  }
-  
-  .surah-card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    color: #fff;
-    background-color: #27ae60;
-    text-decoration: none;
-    border-radius: 4px;
-  }
-  
-  .surah-card a:hover {
-    background-color: #2ecc71;
-  }
-  
+}
+
+/* Circle Design - Positioned at the top middle, overlapping the card */
+.surah-list-item .circle {
+  position: absolute;
+  top: -35px;
+  /* Half outside the card */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centering the circle horizontally */
+  width: 70px;
+  height: 70px;
+  background: #ff9966;
+  /* Gradient color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Surah Details */
+.surah-list-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: #999;
+  font-size: 1.25rem;
+}
+
+.surah-list-item h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+.surah-list-item .english-name {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 4px;
+}
+
+.surah-list-item .ayah-count {
+  font-size: 14px;
+  font-style: italic;
+  color: #888888;
+  margin-top: 8px;
+}

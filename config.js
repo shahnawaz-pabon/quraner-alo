@@ -6,10 +6,10 @@ const config = {
     trailingSlash: false,
   },
   header: {
-    logo: '/assets/logo.svg',
+    logo: 'https://raw.githubusercontent.com/shahnawaz-pabon/al-quran-the-true-guidance/refs/heads/main/static/assets/logo.png',
     logoLink: 'https://shahnawaz-pabon.github.io/',
     title:
-      "<a href='https://shahnawaz-pabon.github.io/'><img class='img-responsive' src='https://shahnawaz-pabon.github.io/assets/homepage/learn-logo.svg' alt='Site logo' /></a>",
+      "<a href='https://shahnawaz-pabon.github.io/'><img class='img-responsive' src='https://raw.githubusercontent.com/shahnawaz-pabon/al-quran-the-true-guidance/refs/heads/main/static/assets/logo.png' alt='Site logo' /></a>",
     githubUrl: 'https://github.com/shahnawaz-pabon/al-quran-the-true-guidance',
     helpUrl: '',
     tweetText: '',

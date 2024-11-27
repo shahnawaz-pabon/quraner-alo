@@ -36,7 +36,8 @@ class ThemeProvider extends React.Component {
 
     return (
       <div>
-        <Global styles={[baseStyles, ...styles]} />
+        {/* <Global styles={[baseStyles(currentActiveTheme), ...styles]} /> */}
+        <Global styles={css([baseStyles(currentActiveTheme), ...styles])} />
         <Header
           location={location}
           isDarkThemeActive={isDarkThemeActive}
