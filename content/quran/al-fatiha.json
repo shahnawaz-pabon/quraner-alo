@@ -1,0 +1,78 @@
+{
+    "id": 1,
+    "name": "Al-Fatiha",
+    "english_name": "The Opening",
+    "ayahs": [
+      {
+        "id": 1,
+        "text": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
+        "translations": [
+          {
+            "language": "en",
+            "text": "In the name of Allah, the Most Gracious, the Most Merciful."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "الْحَمْدُ لِلَّهِ رَبِّ الْعَـٰلَمِينَ",
+        "translations": [
+          {
+            "language": "en",
+            "text": "Praise be to Allah, the Lord of all the worlds."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "الرَّحْمَٰنِ الرَّحِيمِ",
+        "translations": [
+          {
+            "language": "en",
+            "text": "The Most Gracious, the Most Merciful."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "مَالِكِ يَوْمِ الدِّينِ",
+        "translations": [
+          {
+            "language": "en",
+            "text": "Master of the Day of Judgment."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+        "translations": [
+          {
+            "language": "en",
+            "text": "You alone we worship, and You alone we ask for help."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        "translations": [
+          {
+            "language": "en",
+            "text": "Guide us on the Straight Path."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّآلِّينَ",
+        "translations": [
+          {
+            "language": "en",
+            "text": "The path of those who have received Your grace; not of those who have brought down wrath upon themselves, nor of those who have gone astray."
+          }
+        ]
+      }
+    ]
+  }
+  
