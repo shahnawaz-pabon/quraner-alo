@@ -1,126 +1,125 @@
-/* src/styles/global.css */
-
-/* Base Styling */
-/* * {
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  background: #1488cc;
-  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
-  background: linear-gradient(to right, #2b32b2, #1488cc);
-} */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap");
-
-.arabic-text {
-  font-family: "Noto Sans Arabic", sans-serif;
-  /* direction: rtl; */
-  /* Right to Left text direction */
-  /* text-align: right; */
-  /* Align Arabic text to the right */
-}
 
 /* Surah List Container */
 .surah-list {
   display: flex;
   flex-wrap: wrap;
-  /* Allows wrapping to new rows */
-  gap: 24px;
-  /* Space between cards */
-  padding: 24px;
-  justify-content: space-between;
-  /* Distribute the cards evenly */
+  gap: 50px;
+  padding: 15px;
+  justify-content: space-evenly;
 }
 
 /* Individual Card Styling */
 .surah-list-item {
   position: relative;
   background: #fff;
-  max-width: 500px;
   border-radius: 10px;
-  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
-  padding: 60px 16px 16px 16px;
-  /* Extra space at top to accommodate the circle */
-  text-align: center;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.15);
+  padding: 16px 16px 16px;
   box-sizing: border-box;
-  width: calc(25% - 24px);
-  /* Four cards per row */
-  min-width: 250px;
+  width: calc(33.33% - 24px);
+  min-width: 335px;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Added flexbox to vertically center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Ensures text alignment */
+  height: 150px;
+  /* Reduced height */
+}
+
+.surah-list-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .surah-list-item {
+    width: calc(50% - 24px);
+  }
 }
 
 @media (max-width: 768px) {
   .surah-list-item {
-    width: calc(50% - 16px);
-    /* Two cards per row */
-  }
-}
-
-@media (max-width: 480px) {
-  .surah-list-item {
     width: 100%;
-    /* One card per row */
   }
 }
 
-/* Circle Design - Positioned at the top middle, overlapping the card */
+/* Circle Design */
 .surah-list-item .circle {
   position: absolute;
-  top: -35px;
-  /* Half outside the card */
+  top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  /* Centering the circle horizontally */
-  width: 70px;
-  height: 70px;
-  background: #ff9966;
-  /* Gradient color */
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(to right, #2980b9, #1abc9c);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
-  z-index: 1;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Surah Details */
-.surah-list-item h3 {
-  margin: 0 0 0.5rem 0;
-  color: #999;
-  font-size: 1.25rem;
+/* Surah Details Section */
+.surah-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Aligns content to the top */
+  width: 100%;
+  /* Ensures the full width is used */
 }
 
-.surah-list-item h1 {
-  margin: 0 0 1rem 0;
-  font-size: 2.5rem;
-  letter-spacing: 0.5px;
+.surah-details .left {
+  text-align: left;
+  flex: 1;
+}
+
+.surah-details .right {
+  text-align: right;
+  /* direction: rtl; */
+  flex: 1;
+  /* For proper Arabic alignment */
+}
+
+/* English and Translation Styling */
+.english-name {
+  font-size: 18px;
   color: #333;
+  margin: 0;
+  font-weight: 600;
 }
 
-.surah-list-item .english-name {
-  font-size: 16px;
-  color: #666666;
-  margin-bottom: 4px;
-}
-
-.surah-list-item .ayah-count {
+.translation {
   font-size: 14px;
-  font-style: italic;
-  color: #888888;
-  margin-top: 8px;
+  color: #666;
+  margin-top: 4px;
 }
+
+/* Arabic Name Styling */
+.arabic-text {
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-size: 20px;
+  color: #000;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Ayah Count Styling */
+.ayah-count {
+  font-size: 14px;
+  color: #888;
+  margin-top: 4px;
+  font-style: italic;
+}
+

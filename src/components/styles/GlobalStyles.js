@@ -610,7 +610,7 @@ export const baseStyles = (theme) => css`
 
   /* Image styling */
   img {
-    max-width: 5%;
+    max-width: 60%;
   }
   /* end image */
   .githubBtn {

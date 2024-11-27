@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
 
@@ -7,6 +7,7 @@ import mdxComponents from './mdxComponents';
 import Sidebar from './sidebar';
 import RightSidebar from './rightSidebar';
 import config from '../../config.js';
+import { DoorOpen, DoorClosed } from '@styled-icons/fa-solid';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -55,26 +56,75 @@ const MaxWidth = styled('div')`
 `;
 
 const LeftSideBarWidth = styled('div')`
-  width: 298px;
+  width: 250px;
+  transition: transform 0.3s ease;
+  transform: ${({ isVisible }) => (isVisible ? 'translateX(0)' : 'translateX(-100%)')};
+
+  @media only screen and (max-width: 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: ${({ theme }) => theme.colors.background};
+    z-index: 100;
+  }
 `;
 
 const RightSideBarWidth = styled('div')`
-  width: 224px;
+  width: 200px;
 `;
 
-const Layout = ({ children, location }) => (
-  <ThemeProvider location={location}>
+const SidebarContainer = styled('div')`
+  width: 250px;
+  position: relative;
+  transition: transform 0.3s ease;
+  transform: ${({ isVisible }) => (isVisible ? 'translateX(0)' : 'translateX(-100%)')};
+
+  @media only screen and (max-width: 767px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: ${({ theme }) => theme.colors.background};
+    z-index: 100;
+  }
+`;
+
+
+const ToggleIcon = styled('div')`
+  position: absolute;
+  top: 0px;
+  right: -42px;
+  background: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 200;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+`;
+
+const Layout = ({ children, location }) => {
+  const [sidebarVisible, setSidebarVisible] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+
+  return (<ThemeProvider location={location}>
     <MDXProvider components={mdxComponents}>
       <Wrapper>
-        <LeftSideBarWidth className={'hiddenMobile'}>
+        <SidebarContainer isVisible={sidebarVisible}>
+          <ToggleIcon onClick={toggleSidebar}>
+            {sidebarVisible ? <DoorClosed size={20} /> : <DoorOpen size={20} />}
+          </ToggleIcon>
           <Sidebar location={location} />
-        </LeftSideBarWidth>
-        {config.sidebar.title ? (
-          <div
-            className={'sidebarTitle sideBarShow'}
-            dangerouslySetInnerHTML={{ __html: config.sidebar.title }}
-          />
-        ) : null}
+        </SidebarContainer>
         <Content>
           <MaxWidth>{children}</MaxWidth>
         </Content>
@@ -83,7 +133,8 @@ const Layout = ({ children, location }) => (
         </RightSideBarWidth>
       </Wrapper>
     </MDXProvider>
-  </ThemeProvider>
-);
+  </ThemeProvider>)
+
+};
 
 export default Layout;
